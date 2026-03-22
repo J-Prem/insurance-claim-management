@@ -12,27 +12,26 @@ The platform follows a layered **MVC architecture** with centralized data persis
 
 ```mermaid
 graph TD
-    subgraph "Frontend (React + Vite)"
-        UI[User Interface]
-        Auth[JWT Storage]
+    subgraph "Frontend"
+        UI[React UI]
     end
 
     subgraph "Backend (Spring Boot)"
         Controller[REST Controllers]
+        Security[JWT Security Layer]
         Service[Business Service Layer]
-        Repo[Spring Data JPA Repositories]
-        Security[Spring Security + JWT Filter]
+        Repo[JPA Repository]
     end
 
-    subgraph "Database (PostgreSQL)"
+    subgraph "Database"
         DB[(PostgreSQL)]
     end
 
-    UI <--> Controller
-    Controller <--> Service
-    Service <--> Repo
-    Repo <--> DB
-    Security -.-> Controller
+    UI --> Controller
+    Controller --> Security
+    Controller --> Service
+    Service --> Repo
+    Repo --> DB
 ```
 
 ### 🔄 Claim Lifecycle Flow
