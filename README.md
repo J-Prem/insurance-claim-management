@@ -12,7 +12,7 @@ A comprehensive Full-Stack Insurance Claim Management System built with **Spring
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React, Vite, Axios, React Router, Hot Toast.
+- **Frontend**: React, Vite, Axios, React Router.
 - **Backend**: Java, Spring Boot, Spring Data JPA, Spring Security, JWT.
 - **Database**: PostgreSQL / MySQL (JPA-compatible).
 
